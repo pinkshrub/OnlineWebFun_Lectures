@@ -14,7 +14,7 @@
  /*background-color: green;*/
  margin-bottom: 20px;
  /*padding: 20px;*/
- background: linear-gradient(green, yellow);
+ /*background: linear-gradient(green, yellow);*/
 }
 #navigation{
  height: 300px;
@@ -23,6 +23,17 @@
  display: inline-block;
  vertical-align: top;
 }
+
+li {
+  display: inline-block;
+}
+li::after {
+  content: " | "
+}
+li:last-child::after {
+  content: ""
+}
+
 #main_content{
  height: 400px;
  width: 70%
