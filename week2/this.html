@@ -12,10 +12,24 @@
       <li id="3">Third</li>
       <li id="4">Fourth</li>
     </ul>
+    <form action="">
+      Name: <input id="name" type="text" />
+      <input type="submit" value="Submit" />
+    </form>
   </body>
   <script>
-  $('li').click(function(){
-    console.log($(this));
-  })
+  var idArray = $('li').attr('id');
+  console.log(idArray);
+
+
+  // $('li').click(function(){
+  //   console.log($(this).attr('id'));
+  // })
+
+  // $('form').submit(function(){
+  //   console.log($('#name').val());
+  //
+  //   return false;
+  // })
   </script>
 </html>
