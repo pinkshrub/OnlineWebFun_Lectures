@@ -94,27 +94,27 @@ Star Wars API: http://swapi.co/
 	- An example of JSON:
 ```
 var data = {
-            results: [
-              {
-                name: 'Nic',
-                hobby: 'Coding'
-              },
-              {
-                name: 'Dhurata',
-                hobby: 'Coding'
-              },
-              {
-                name: 'Todd',
-                hobby: 'Teaching Others To Code'
-              },
-	      {
-		 name: 'Michael',
-		 hobby: 'Teaching Others To Code'
-	      }
-            ],
-            date: '08-16-2016',
-            version: 0.9
-          }
+	results: [
+		{
+			name: 'Nic',
+			hobby: 'Coding'
+		},
+		{
+			name: 'Dhurata',
+			hobby: 'Coding'
+		},
+		{
+			name: 'Todd',
+			hobby: 'Teaching Others To Code'
+		},
+		{
+			name: 'Michael',
+			hobby: 'Teaching Others To Code'
+		}
+	],
+	date: '08-16-2016',
+	version: 0.9
+}
 ```
 
 
