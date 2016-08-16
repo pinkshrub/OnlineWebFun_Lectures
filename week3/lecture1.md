@@ -107,12 +107,12 @@ var data = {
                 name: 'Todd',
                 hobby: 'Teaching Others To Code'
               },
-				  {
-					 name: 'Michael',
-					 hobby: 'Teaching Others To Code'
-				  }
+	      {
+		 name: 'Michael',
+		 hobby: 'Teaching Others To Code'
+	      }
             ],
-            date: '08-01-2016',
+            date: '08-16-2016',
             version: 0.9
           }
 ```
