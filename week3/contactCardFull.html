@@ -29,8 +29,24 @@
 			}); //user_form.submit
 
 			//build click handler
+			$(document).on('click', '.person', function() {
+				$(this).children().toggle('slow');
+			})
 
 			//integrate github
+			$('.github_form').submit(function() {
+				$.get('https://api.github.com/users/'+ $('#username').val() , function(res) {
+					console.log(res);
+					var htmlString = "<div class='person'>";
+					htmlString += "<img style='height: 50px; width: 50px;' src='"+ res.avatar_url +"'></img>";
+					htmlString += "<h2>"+ res.name +"</h2>";
+					htmlString += "<h4 style='display: none'>"+ res.bio +"</h4>";
+					htmlString += "<h4>Click for description!</h4>";
+					htmlString += "</div>";
+					$('#contacts').append(htmlString);
+				}) //$.get
+				return false;
+			}) //github_form.submit
 
 
 		}); //document.ready
@@ -39,7 +55,7 @@
 	<body>
 		<div class="row">
 			<div class="five columns">
-				<form class="user_form" action="/dungarees" method="post">
+				<form class="user_form" action="/" method="post">
 					<label for="first_name">First name: </label>
 					<input id="fname" type="text" name="first_name" value="">
 					<label for="last_name">Last name: </label>
@@ -48,6 +64,11 @@
 					<textarea id="desc" name="description" rows="8" cols="40" placeholder="Enter description here"></textarea>
 					<br>
 					<input class="button button-primary" type="submit" name="submit" value="Add User">
+				</form>
+				<form class="github_form" action="/" method="post">
+					<label for="username">Github username:</label>
+					<input id="username" type="text" name="username" value="">
+					<input type="submit" name="github" value="Search Github">
 				</form>
 			</div>
 			<div class="six columns">
