@@ -5,6 +5,7 @@
 - Contact Card
 
 ####LEMO - GitHub API and Contact Card
+- GitHub API documentation: https://developer.github.com/v3/
 - GitHub's Root Endpoint: `https://api.github.com`
   - All requests emanate from this base URL
   - A specific user is at the route: `https://api.github.com/users/:username`
