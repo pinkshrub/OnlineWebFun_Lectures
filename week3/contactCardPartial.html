@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" rel="stylesheet">
+		<title>Contact Card</title>
+		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+		<style media="screen">
+			.person {
+				border: 4px solid black;
+				min-height: 130px;
+				text-align: center;
+				padding: 5px;
+			}
+		</style>
+		<script type="text/javascript">
+		$('document').ready(function() {
+
+			$('.user_form').submit(function() {
+				console.log($('#desc').val());
+				var htmlString = "<div class='person'>";
+				htmlString += "<h2>"+ $('#fname').val()+ " " + $('#lname').val() +"</h2>";
+				htmlString += "<h4 style='display: none'>"+ $('#desc').val() +"</h4>";
+				htmlString += "<h4>Click for description!</h4>";
+				htmlString += "</div>";
+				$('#contacts').append(htmlString);
+				return false;
+			}); //user_form.submit
+
+			//build click handler
+
+			//integrate github
+
+
+		}); //document.ready
+		</script>
+	</head>
+	<body>
+		<div class="row">
+			<div class="five columns">
+				<form class="user_form" action="/dungarees" method="post">
+					<label for="first_name">First name: </label>
+					<input id="fname" type="text" name="first_name" value="">
+					<label for="last_name">Last name: </label>
+					<input id = "lname" type="text" name="last_name" value="">
+					<label for="description">Description: </label>
+					<textarea id="desc" name="description" rows="8" cols="40" placeholder="Enter description here"></textarea>
+					<br>
+					<input class="button button-primary" type="submit" name="submit" value="Add User">
+				</form>
+			</div>
+			<div class="six columns">
+				<div id="contacts">
+
+				</div> <!-- contacts -->
+			</div>
+		</div>
+	</body>
+</html>
