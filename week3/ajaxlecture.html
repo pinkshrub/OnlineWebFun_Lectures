@@ -8,19 +8,46 @@
 		<script type="text/javascript">
 
 			$('document').ready(function() {
-
+				console.log('ready')
 				// let's now use our algorithm skills to make a loop and insert the value of the loop position into this img tag, appending it to the div
+				for (var i = 1; i < 149; i++) {
+					$('#pokemon').append('<img src="http://pokeapi.co/media/img/'+i+'.png" alt="bulbasaur" id="'+i+'"/>');
+				}
 
 				//way to retrieve JSON
-				// $.get('url', callback, dataType)
-				// $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
-				// 	console.log(res);
-				// // how about its type?
-				// //	how about its weight?
-				// }, 'json');
-				//
+				//  $.get('url', callback, [dataType])
 
-			})
+				$('img').click(function(){
+					console.log('here')
+					$.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
+						console.log(res);
+						console.log(res['happiness']);
+						$('.data').append(res['name']);
+					}, "json");
+				// how about its type?
+				//	how about its weight?
+				});
+
+				// a much fuller function, using more of the data we're getting in
+				// $('img').click( function(){
+            //    console.log("identity = ", $(this).attr('id'))
+            //    $.get("http://pokeapi.co/api/v1/pokemon/"+ $(this).attr('id'), function(res) {
+            //       var pokedex = "";
+            //       pokedex += "<h2>"+ res.name +"<h2>"
+            //       pokedex += "<h4>"+ res.height +" ft</h4>"
+            //       pokedex += "<h4>"+ res.weight +" lbs</h4>"
+            //       pokedex += "<h4>Types</h4>";
+            //       pokedex += "<ul>";
+            //       for(var i = 0; i < res.types.length; i++) {
+            //          pokedex += "<li>" + res.types[i].name + "</li>";
+            //       }
+            //       pokedex += "</ul>";
+            //       $(".data").html(pokedex);
+            //    }, "json");
+            // });
+
+
+			 });
 
 		</script>
 
@@ -28,8 +55,15 @@
 	</head>
 	<body>
 		<h1>Pokemon API</h1>
+		<div class="data">
+
+		</div>
 		<div id="pokemon">
-			<img src="http://pokeapi.co/media/img/4.png" alt="bulbasaur" />
+			<!-- <img src="http://pokeapi.co/media/img/4.png" alt="bulbasaur" />
+			<img src="http://pokeapi.co/media/img/1.png" alt="bulbasaur" />
+			<img src="http://pokeapi.co/media/img/2.png" alt="bulbasaur" />
+			<img src="http://pokeapi.co/media/img/3.png" alt="bulbasaur" /> -->
+
 		</div>
 	</body>
 </html>
