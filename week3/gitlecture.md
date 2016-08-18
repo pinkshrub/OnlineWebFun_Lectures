@@ -74,7 +74,7 @@
 </table>
 
 ####Discussion: What to look out for...
-- .gitignore file
+- .gitignore file (secretkey.py, *.DS_STORE, /venv)
 - merge conflicts
 - PULL A LOT
 - "There's a command for that"
