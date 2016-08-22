@@ -1,122 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Contact Card</title>
-  <style>
-    #forms{
-      display: inline-block;
-      width: 48%;
-    }
-    form{
-      margin: 20px;
-    }
-    label{
-      display: block;
-    }
-    #contacts{
-      display: inline-block;
-      vertical-align: top;
-      width: 48%;
-    }
-    div.card{
-      border: 3px solid black;
-      width: 300px;
-      min-height: 100px;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    div.card img{
-      width: 25%;
-      height: 25%;
-    }
-  </style>
-  <script src="./../jquery-1.11.3.min.js"></script>
-  <script>
-    $(document).ready(function(){
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" rel="stylesheet">
+		<title>Contact Card</title>
+		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+		<style media="screen">
+			.person {
+				border: 4px solid black;
+				min-height: 130px;
+				text-align: center;
+				padding: 5px;
+			}
+		</style>
+		<script type="text/javascript">
+		$('document').ready(function() {
 
-      $('form#normal').submit(function(){
-        var first = $('#first_name').val();
-        var last = $('#last_name').val();
-        var desc = $('#description').val();
+			$('.user_form').submit(function() {
+				console.log($('#desc').val());
+				var htmlString = "<div class='person'>";
+				htmlString += "<h2>"+ $('#fname').val()+ " " + $('#lname').val() +"</h2>";
+				htmlString += "<h4 style='display: none'>"+ $('#desc').val() +"</h4>";
+				htmlString += "<h4>Click for description!</h4>";
+				htmlString += "</div>";
+				$('#contacts').append(htmlString);
+				return false;
+			}); //user_form.submit
 
-        var html_str = "<div class='card'>";
-              html_str += "<div class='name'>";
-                html_str += "<h1>"+first+" "+last+"</h1>";
-                html_str += "<p>Click for Description</p>";
-              html_str += "</div>";
-              html_str += "<div class='description' hidden>";
-                html_str += "<h3>"+desc+"</h3>";
-              html_str += "</div>";
-            html_str += "</div>";
+			//add github integration
+			$('.github_form').submit(function() {
+				console.log('submitted')
+				$.get('https://api.github.com/users/' + $('#username').val(), function(res) {
+					console.log(res)
+					var htmlString = "<div class='person'>";
+						htmlString += "<img style='height: 50px; width: 50px;' src='"+ res.avatar_url +"'>"
+						htmlString += "<h2>"+ res.name +"</h2>";
+						htmlString += "<p style='display: none'>"+ res.bio +"</p>";
+						htmlString += "</div>";
+					$('#contacts').append(htmlString);
+				}); //get request
+				return false;
+			}); //github_form.submit
 
-        $('#contacts').append(html_str);
+		}); //document.ready
 
-        $('#first_name').val("");
-        $('#last_name').val("");
-        $('#description').val("");
+		//add this
+		$(document).on('click', '.person', function() {
+			$(this).children().toggle("slow");
+		});
+		// to display without using ids (very ugly)
+		// console.log($('.user_form').find('input[name="first_name"]').val())
 
-        return false;
-      });
+		</script>
+	</head>
+	<body>
+		<div class="row">
+			<div class="five columns">
+				<form class="user_form" action="/dungarees" method="post">
+					<label for="first_name">First name: </label>
+					<input id="fname" type="text" name="first_name" value="">
+					<label for="last_name">Last name: </label>
+					<input id = "lname" type="text" name="last_name" value="">
+					<label for="description">Description: </label>
+					<textarea id="desc" name="description" rows="8" cols="40" placeholder="Enter description here"></textarea>
+					<br>
+					<input class="button button-primary" type="submit" name="submit" value="Add User">
+				</form>
+				<form class="github_form" action="/github" method="post">
+					<label for="name">Github username: </label>
+					<input id="username" type="text" name="name" value="">
+					<input type="submit" name="submit" value="Search Github">
+				</form>
+			</div>
 
-      $('#contacts').on('click', 'div.card', function(){
-        $(this).find('div.name').toggle();
-        $(this).find('div.description').toggle();
-      });
+			<div class="five columns">
+				<div id="contacts">
 
-      $('form#github').submit(function(event){
-        event.preventDefault();
-
-        var username = $('#username').val();
-
-        $.get('https://api.github.com/users/'+username, function(userInfo){
-          var html_str = "<div class='card'>";
-                html_str += "<div class='name'>";
-                  html_str += "<h1>"+userInfo['name']+"</h1>";
-                  html_str += "<p>Click for Description</p>";
-                html_str += "</div>";
-                html_str += "<div class='description' hidden>";
-                  html_str += "<img src='"+userInfo['avatar_url']+"'>";
-                  html_str += "<h3>"+userInfo['bio']+"</h3>";
-                html_str += "</div>";
-              html_str += "</div>";
-
-          $('#contacts').append(html_str);
-
-          $('#username').val("");
-
-        });
-
-      });
-
-    });
-  </script>
-</head>
-<body>
-  <div id="forms">
-    <form action="#" id="normal">
-      <label for="first_name">First Name:
-        <input type="text" id="first_name" />
-      </label>
-      <label for="last_name">Last Name:
-        <input type="text" id="last_name" />
-      </label>
-      <label for="description">Description:
-        <textarea id="description"></textarea>
-      </label>
-      <input type="submit" value="Add User">
-    </form>
-    <hr>
-    <form action="#" id="github">
-      <label for="username">GitHub Username:
-        <input type="text" id="username" />
-      </label>
-      <input type="submit" value="Add GitHub User">
-    </form>
-  </div>
-  <div id="contacts">
-    <h1>Contacts</h1>
-    <!-- contact cards will be appended here -->
-  </div>
-</body>
+				 </div> <!-- contacts -->
+			</div>
+		</div>
+	</body>
 </html>
