@@ -5,10 +5,11 @@
 ####Administrative Bits
 - Anyone still not invited to the Coding Dojo Online Slack team?
 - Anyone still not able to access the Learning Platform? [http://learn.codingdojo.com]
-- Anyone still not in the Slack cohort-specific channel?
+- Anyone still not in the Slack web-fundamentals channel?
 
 ####HTTP Request/Response Cycle
-- Apple Store
+- IKEA store
+- Straightforward walkthrough
 
 ####Where Does The Web Start?
 - It's all just a bunch of connected computers
@@ -25,12 +26,13 @@
   - Just a type of language contained in a document that a browser can read
   - Determines the structure of the page
 - Tags get interpreted as content
-  - `<!DOCTYPE html>` Starts a document and the corresponding `</html>` ends it
-  - `<head>` contains the brains of the page
+  - `<!DOCTYPE html>` declares that this is an html5 document. Use this always.
+  - `<html>` starts a document and the corresponding `</html>` ends it
+  - `<head>` contains information about the page
   - `<body>` contains the content displayed
 - Most-used tags are on the learning platform.  
   - We teach the <b>20%</b> that builds the <b>80%</b> of sites
-  - What's ESPN.com made up of? Nothing crazy!
+  - What's nytimes.com made up of? Nothing crazy!
 
 ####Indentation - Which Would You Rather Read?  Which One Works?
 ```
@@ -87,6 +89,6 @@
 2. Download Git (skip ahead to Git section of platform)
 3. Create a Repo
 4. Push an Assignment
-5. Send a Slack message to the aug_2016_cohort channel with a link to your new repo
+5. Send a Slack message to the web-fundamentals channel with a link to your new repo
 
 ####Lemo - Create A Git Repo and Push Algorithm Solutions
