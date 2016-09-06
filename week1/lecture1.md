@@ -1,6 +1,6 @@
 #Web Fundamentals - Week 1
 ####Key Assignment
-- Plotting Your Blocks
+- FreeBSD
 
 ####Administrative Bits
 - Anyone still not invited to the Coding Dojo Online Slack team?
@@ -23,6 +23,7 @@
 ####HTML
 - Hypertext Markup Language
   - Just a type of language contained in a document that a browser can read
+  - Determines the structure of the page
 - Tags get interpreted as content
   - `<!DOCTYPE html>` Starts a document and the corresponding `</html>` ends it
   - `<head>` contains the brains of the page
