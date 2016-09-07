@@ -22,7 +22,7 @@
 - Javascript
 
 ####HTML
-- Hypertext Markup Language
+- HyperText Markup Language
   - Just a type of language contained in a document that a browser can read
   - Determines the structure of the page
 - Tags get interpreted as content
