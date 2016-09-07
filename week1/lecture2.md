@@ -1,6 +1,6 @@
 #Web Fundamentals - Week 1
 ####Key Assignment
-- Plotting Your Blocks
+- Plotting Your Blocks + FreeBSD
 
 ####Reminder: The 3 Languages Browsers Speak
 - HTML
