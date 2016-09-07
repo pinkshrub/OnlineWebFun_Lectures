@@ -36,16 +36,16 @@
 
 ####Indentation - Which Would You Rather Read?  Which One Works?
 ```
-<html>
-<head>
-<title>Indented HTML</title>
+    <html>
+  <head>
+                                          <title>Indented HTML</title>
 </head>
-  <body>
-<div>
+                            <body>
+        <div>
       <h1>Hello World</h1>
-    </div>
-</body>
-</html>
+          </div>
+        </body>
+      </html>
 ```
 #####VS.
 ```
@@ -84,7 +84,7 @@
   - `<header>`
   - `<footer>`
 
-####For Wednesday
+####For Tomorrow
 1. Create a GitHub Account
 2. Download Git (skip ahead to Git section of platform)
 3. Create a Repo
