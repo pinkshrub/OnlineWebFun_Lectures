@@ -8,7 +8,7 @@
 - Anyone still not in the Slack web-fundamentals channel?
 
 ####HTTP Request/Response Cycle
-- IKEA store
+- Apple store
 - Straightforward walkthrough
 
 ####Where Does The Web Start?
