@@ -8,7 +8,7 @@
 - Javascript
 
 ####Intro to CSS
-- Cascading Stylesheets
+- Cascading Style Sheets
 - If HTML is the content, CSS is the style and flair
 - CSS rules...
 ```
