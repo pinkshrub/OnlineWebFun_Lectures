@@ -134,4 +134,4 @@ div {
 - Content size can be manipulated by the `width: ...px;` and `height: ...px;` rules
   - Check out Inspect Element in Google Chrome and see the box model in action!
 
-####LEMO - Let's Make a `<ul>` Horizontal!
+####LEMO - Let's Make a `<ul>` Horizontal / LEMO Plotting Your Blocks!
