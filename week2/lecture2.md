@@ -23,8 +23,8 @@ console.dir(document);
 ####The How
 - Vanilla Javascript can pinpoint elements in the DOM, allowing us to manipulate them in various ways:
   - Change styling
-  - Hide/Remove
-  - Listen for Mouse or Keyboard events
+  - Hide/Remove elements
+  - Listen for Mouse or Keyboard events (event listeners)
 ```
 //vanilla javascript
 document.getElementById('title').innerHTML = "Wowsers!" // => Grabs an HTML element with id="title" and then sets its inner HTML to "WHOA NELLY"
