@@ -27,7 +27,7 @@ console.dir(document);
   - Listen for Mouse or Keyboard events
 ```
 //vanilla javascript
-document.getElementById('title').innerHTML = "WHOA NELLY" // => Grabs an HTML element with id="title" and then sets its inner HTML to "WHOA NELLY"
+document.getElementById('title').innerHTML = "Wowsers!" // => Grabs an HTML element with id="title" and then sets its inner HTML to "WHOA NELLY"
 ```
 - Here's the jQuery equivalent
 ```
@@ -40,6 +40,7 @@ $('#title').html("WHOA NELLY");
 //CDN
 <script   src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 ```
+- Minified version??
 
 ####The $ and Selectors
 - By including jQuery in our scripts, we can use the `$` to find elements for us
