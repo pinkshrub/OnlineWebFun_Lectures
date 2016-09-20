@@ -1,3 +1,8 @@
+#jQuery -> AJAX
+
+##First, a step back: 
+
+ Objects
 
 ##We all know about javascript variables by this point:
 
