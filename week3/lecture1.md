@@ -96,23 +96,23 @@ Star Wars API: http://swapi.co/
 var data = {
 	results: [
 		{
-			name: 'Nic',
+			name: 'Rob',
 			hobby: 'Coding'
 		},
 		{
-			name: 'Dhurata',
+			name: 'Jennifer',
 			hobby: 'Coding'
 		},
 		{
-			name: 'Todd',
-			hobby: 'Teaching Others To Code'
+			name: 'Leo',
+			hobby: 'Coding'
 		},
 		{
 			name: 'Michael',
-			hobby: 'Teaching Others To Code'
+			hobby: 'Helping Others Code'
 		}
 	],
-	date: '08-16-2016',
+	date: '09-20-2016',
 	version: 0.9
 }
 ```
