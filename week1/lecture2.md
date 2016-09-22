@@ -129,7 +129,7 @@ div {
 - When re-sizing any elements, such as a `<div>`, we need to know four things
 - Margin, Padding, Border, Content
 - Margin says 'push away'
-- Padding says 'compress my contents!'
+- Padding says 'give my contents some cushion!'
 - Border says 'apply more to the outside of my contents but don't squish the contents'
 - Content size can be manipulated by the `width: ...px;` and `height: ...px;` rules
   - Check out Inspect Element in Google Chrome and see the box model in action!
