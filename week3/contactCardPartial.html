@@ -20,17 +20,39 @@
 			$('.user_form').submit(function() {
 				console.log($('#desc').val());
 				var htmlString = "<div class='person'>";
-				htmlString += "<h2>"+ $('#fname').val()+ " " + $('#lname').val() +"</h2>";
-				htmlString += "<h4 style='display: none'>"+ $('#desc').val() +"</h4>";
-				htmlString += "<h4>Click for description!</h4>";
-				htmlString += "</div>";
+					htmlString += "<h2>"+ $('#fname').val()+ " " + $('#lname').val() +"</h2>";
+					htmlString += "<h4 style='display: none'>"+ $('#desc').val() +"</h4>";
+					htmlString += "<h4>Click for description!</h4>";
+					htmlString += "</div>";
 				$('#contacts').append(htmlString);
 				return false;
 			}); //user_form.submit
 
 			//build click handler
+			$(document).on('click', '.person', function() {
+				$(this).children().toggle('slow');
+			});
+
 
 			//integrate github
+			$('.github_form').submit(function() {
+				console.log('github');
+
+				$.get('https://api.github.com/users/'+ $('#username').val(), function(res){
+					console.log(res);
+					console.log(res.name);
+					console.log(res.avatar_url);
+
+
+				})
+
+				return false;
+			}); //github_form.submit
+
+			//build click handler
+			$(document).on('click', '.person', function() {
+				$(this).children().toggle('slow');
+			});
 
 
 		}); //document.ready
@@ -48,6 +70,11 @@
 					<textarea id="desc" name="description" rows="8" cols="40" placeholder="Enter description here"></textarea>
 					<br>
 					<input class="button button-primary" type="submit" name="submit" value="Add User">
+				</form>
+				<form class="github_form" method="post">
+					<label for="username">Github username: </label>
+					<input id="username" type="text" name="username" value="">
+					<input type="submit" name="submit" value="Search GitHub">
 				</form>
 			</div>
 			<div class="six columns">

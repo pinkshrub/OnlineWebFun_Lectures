@@ -81,7 +81,7 @@
   - `<header>`
   - `<footer>`
 
-####For Wednesday
+####Today
 1. Create a GitHub Account
 2. Download Git (skip ahead to Git section of platform)
 3. Create a Repo

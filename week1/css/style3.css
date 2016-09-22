@@ -1,0 +1,27 @@
+* {
+	background-color: yellow;
+}
+div {
+	color: red;
+}
+#paragraph-top {
+	background-color: black;
+}
+.paragraph-top {
+	color: rgb(25,180,21);
+	background-color: gray;
+}
+.paragraph-bottom {
+	font-size: 24pt;
+}
+
+.cool ul li:first-child {
+	background-color: blue;
+}
+.cool li {
+	background-color: white;
+}
+
+li.cool {
+	background-color: green;
+}
