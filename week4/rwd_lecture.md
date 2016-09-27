@@ -1,6 +1,6 @@
 #Web Fundamentals - Week 4
 ####Key Assignments
-- Pacman (Optional but Awesome)
+- Pacman
 - Bootstrap Research
 
 ####Responsive Web Design
@@ -30,5 +30,5 @@
 ```
 
 ####Grids
-- Bootstrap, Materialize (Google), Skeleton
+- Bootstrap (Twitter), Materialize (Google), Skeleton
 -

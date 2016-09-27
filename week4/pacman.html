@@ -1,160 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Pacman</title>
-  <script src="./../jquery-1.11.3.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      console.log('jquery');
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Our Pacman Demo</title>
+		<link rel="stylesheet" href="pacman.css" >
+		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+	$(document).ready(function(){
 
-      var world = [
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,1,1,1,1,1,1,1,1,0],
-        [0,1,0,1,0,0,0,0,1,0],
-        [0,1,0,1,0,1,1,0,1,0],
-        [0,1,0,1,0,1,1,0,1,0],
-        [0,1,0,1,0,1,1,0,1,0],
-        [0,1,0,1,1,1,9,0,1,0],
-        [0,1,0,0,0,0,1,0,1,0],
-        [0,1,1,1,1,1,1,1,1,0],
-        [0,0,0,0,0,0,0,0,0,0]
-      ];
+		var world = [
+			[2,2,2,2,2,2,2,2,2,2,2,2],
+			[2,0,1,2,1,1,1,1,1,1,1,2],
+			[2,2,1,2,1,2,1,2,1,1,1,2],
+			[2,1,1,2,1,1,1,2,4,2,1,2],
+			[2,1,2,2,2,2,1,1,2,1,1,2],
+			[2,1,1,1,1,4,1,1,1,1,1,2],
+			[2,1,1,1,2,1,2,1,1,4,1,2],
+			[2,1,1,1,1,1,1,1,2,1,1,2],
+			[2,1,1,1,1,1,2,1,4,2,1,2],
+			[2,1,2,1,4,1,2,4,1,1,1,2],
+			[2,1,1,1,2,1,2,1,1,1,1,2],
+			[2,2,2,2,2,2,2,2,2,2,2,2]
+		];
 
-      console.log(world[0][1]);
-
-      function drawMap(){
-        $('#map').html("");
-        for (var row = 0; row < world.length; row++){
-          for (var col = 0; col < world[row].length; col++){
-            var html_str = "";
-            if (world[row][col] === 1){
-              html_str = "<div class='path'></div>";
-            }else if (world[row][col] === 0){
-              html_str = "<div class='wall'></div>";
-            }else if (world[row][col] === 9){
-              html_str = "<div class='pacman'></div>";
-            }else if (world[row][col] === 2){
-              html_str = "<div class='blank'></div>";
-            }else if (world[row][col] === 3){
-              html_str = "<div class='cherry'></div>";
-            }
-            $('#map').append(html_str);
-          }
-        }
-      }
-      drawMap(); //initial drawing of map
-
-      var pacman = {
-        row: 6,
-        col: 6
-      }
-
-      var calories = 0;
-
-      var firstMoveMade = false;
-
-      $('body').keydown(function(event){
-        if (firstMoveMade === false){
-          setTimeout(function(){
-            world[1][1] = 3;
-          }, 10000);
-          firstMoveMade = true;
-        }
-
-        //left arrow
-        if (event.keyCode === 37){
-          if (world[pacman.row][pacman.col - 1] >= 1){
-            if (world[pacman.row][pacman.col - 1] === 1){
-              calories += 2000;
-            }
-            world[pacman.row][pacman.col - 1] = 9;
-            world[pacman.row][pacman.col] = 2;
-            pacman.col--;
-          }
-        }
-        //up arrow
-        else if (event.keyCode === 38){
-          if (world[pacman.row - 1][pacman.col] >= 1){
-            if (world[pacman.row - 1][pacman.col] === 1){
-              calories += 2000;
-            }
-            world[pacman.row - 1][pacman.col] = 9;
-            world[pacman.row][pacman.col] = 2;
-            pacman.row--;
-          }
-        }
-        //right arrow
-        else if (event.keyCode === 39){
-          if (world[pacman.row][pacman.col + 1] >= 1){
-            if (world[pacman.row][pacman.col + 1] === 1){
-              calories += 2000;
-            }
-            world[pacman.row][pacman.col + 1] = 9;
-            world[pacman.row][pacman.col] = 2;
-            pacman.col++;
-          }
-        }
-        //down arrow
-        else if (event.keyCode === 40){
-          if (world[pacman.row + 1][pacman.col] >= 1){
-            if (world[pacman.row + 1][pacman.col] === 1){
-              calories += 2000;
-            }
-            world[pacman.row + 1][pacman.col] = 9;
-            world[pacman.row][pacman.col] = 2;
-            pacman.row++;
-          }
-        }
-        $('#calories').html("Calories: "+calories);
-        drawMap();
-
-        if (calories === 84000){
-          setTimeout(function(){ alert("YOU WON!"); }, 1000);
-        }
-
-      });
+		var score = 0;
+		var gameActive = true;
 
 
+		var pacman = {
+			x: 1,
+			y: 1
+		};
 
-    });
-  </script>
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-    }
-    #map{
-      height: 500px;
-      width: 500px;
-    }
-    div {
-      display: inline-block;
-      height: 50px;
-      width: 50px;
-      margin: 0px;
-    }
-    .wall {
-      background-color: blue;
-    }
-    .path {
-      background-image: url('muffin.png');
-      background-size: cover;
-    }
-    .pacman {
-      background-image: url('pacman.jpg');
-      background-size: cover;
-    }
-    .blank {
-      background-color: white;
-    }
-    .cherry {
-      background-color: red;
-    }
-  </style>
-</head>
-<body>
-  <div id="map"></div>
-  <div id="calories">Calories: 0</div>
-</body>
+		function displayWorld(){
+			var output = "";
+			for (var i = 0; i < world.length; i++) {
+				output += '<div class="row">\n'
+				for (var j = 0; j < world[i].length; j++) {
+					if(world[i][j] == 2 ) {
+						output += "\t<div class='brick'></div>\n";
+					} else if(world[i][j] == 1 ) {
+						output += "\t<div class='coin'></div>\n";
+					} else if(world[i][j] == 0 ) {
+						output += "\t<div class='empty'></div>\n";
+					} else if(world[i][j] == 4 ) {
+					output += "\t<div class='empty'></div>\n";
+					}
+				}
+				output += "</div>\n"
+			}
+			// console.log(output)
+			$('#gameboard').html(output);
+		}
+
+		document.onkeydown = function(e){
+			console.log(e.keyCode)
+			if(e.keyCode == 37) {
+				if (world[pacman.y][pacman.x-1] !== 2){
+					pacman.x --;
+				}
+				$("#pacman").css('transform', 'rotate(180deg)')
+			}
+			else if(e.keyCode == 38) {
+				if (world[pacman.y-1][pacman.x] !== 2){
+					pacman.y --;
+				}
+				$("#pacman").css('transform', 'rotate(270deg)')
+			}
+			else if(e.keyCode == 39) {
+				if (world[pacman.y][pacman.x+1] !== 2){
+					pacman.x ++;
+				}
+				$("#pacman").css('transform', 'rotate(0deg)')
+			}
+			else if(e.keyCode == 40) {
+				if (world[pacman.y+1][pacman.x] !== 2){
+					pacman.y ++;
+				}
+				$("#pacman").css('transform', 'rotate(90deg)')
+			}
+			if (world[pacman.y][pacman.x] === 1) {
+				world[pacman.y][pacman.x] = 0;
+				score += 100;
+			}
+			displayPacman();
+			displayWorld();
+			displayScore();
+		}
+
+		function displayPacman(){
+			document.getElementById('pacman').style.top = pacman.y*26+11+"px";
+			document.getElementById('pacman').style.left = pacman.x*26+11+"px";
+		}
+
+		function displayScore(){
+			$('#score').text(score);
+		}
+
+		//check game over
+		//implement game over
+		//implement ghost
+		//high score
+		//multiplayer
+
+		displayWorld();
+		displayPacman();
+		displayScore();
+
+	}); //end of document.ready
+		</script>
+	</head>
+	<body>
+		<div id="pacman"></div>
+		<div id="gameboard"></div>
+		<div id="score"></div>
+	</body>
 </html>
