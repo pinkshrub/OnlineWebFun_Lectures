@@ -4,6 +4,15 @@
 
 #### Closures
 
+#### Functions in Objects
+ - Function Declarations vs Function Expressions
+ - Declarations are the 'normal' way:
+ ```
+ function someFunc(){
+	 //some code goes here
+ }
+ ```
+
 #### Hoisting
  ```
  console.log(x);
@@ -74,8 +83,7 @@
 
  brokenLoop(3);
  ```  
-#### Functions in Objects
- - We just talked about the distinction between function declarations and function expressions. 
+
 
 #### Immediate Functions
  - Immediately Invoked Function Expression ("iffy")
