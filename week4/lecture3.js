@@ -23,8 +23,8 @@ console.log(iAmAGlobalVariable);
 /* ~~~~~ SCOPING EXAMPLE WHO HAS ACCESS ~~~~~ */
 //global grandma
 var pies = 'pi';
-  console.log('\nGRANDMAS STUFF')
-  console.log(pies);
+  // console.log('\nGRANDMAS STUFF')
+  // console.log(pies);
 // console.log(dinner);
 // console.log(toys);
   console.log('\n\n')
@@ -58,7 +58,7 @@ function parent(){
   olderSibling();
 }
 
-parent();
+// parent();
 
 /* ~~~~~ RETURN A NUMBER ~~~~~ */
 
@@ -71,8 +71,8 @@ function outer(){
   return pi;
 }
 
-var returnValue = outer();
-console.log(returnValue);
+// var returnValue = outer();
+// console.log(returnValue);
 
 /* ~~~~~ RETURN A FUNCTION ~~~~~ */
 
@@ -86,8 +86,8 @@ function outer(){
 }
 
 var returnValue = outer();
-console.log(returnValue);
-returnValue();
+// console.log(returnValue);
+// returnValue();
 
 /* ~~~~~ CLOSURE IS HAVING ACCESS TO A PARENT FUNCTIONS VARIABLES ~~~~~ */
 
@@ -109,16 +109,35 @@ console.log(eatMoreCookies + '');
 eatMoreCookies();
 eatMoreCookies();
 
-console.log(x);
-// console.log(noSuchVariable);
-
-
-/*ON HOISTING*/
+/* ~~~~~~ ON HOISTING ~~~~~~~ */
 
 // console.log(x);
 // console.log(noSuchVariable);
 
 var x = 20;
+
+var bestFood = "cotton candy";
+
+function returnFood() {
+	console.log(bestFood);
+	bestFood = "elephant ears"; //try with 'var' also
+	console.log(bestFood);
+	return bestFood;
+}
+// returnFood()
+
+/* ~~~ HOISTING FUNCTIONS ~~~ */
+
+// sayHi();
+// hey();
+
+function sayHi(){ 			//named function *declaration*
+	console.log('hi!');
+}
+
+var hey = function (){ 	//anonymous function *expression*
+	console.log('hey there!')
+}
 
 /* ~~~~ ON CALLBACKS ~~~~ */
 function callbackHolder(callbackA, callbackB){
@@ -136,6 +155,8 @@ function last(){
 callbackHolder(first, last);
 
 setTimeout(function(){ console.log('300ms has passed!'); }, 300);
+
+
 /*ON RECURSION*/
 
 function infiniteLoop(){ //poor computer!
@@ -158,5 +179,5 @@ function brokenLoop(num){ //how many times will this run?
   var private = "i am only accessible from within my function's scope"
   console.log(private);
   return "blue"
-})() //immediately invoking itself
+})//() //immediately invoking itself
 // console.log(private);
