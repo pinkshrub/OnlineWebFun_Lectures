@@ -2,7 +2,54 @@
 
 #### Scoping
 
+- Variables come in two scopes, global and local
+
+```js
+  var iAmAGlobalVariable = 'Everyone sees me!';
+
+  function tester(){
+    console.log(iAmAGlobalVariable);
+    var localVariable = 'I was created inside';
+  }
+
+  console.log(localVariable);
+```
+- The location that the variable gets defined in determines what it has access to. By location I mean the function, or lack of, where the variable was defined.
+
 #### Closures
+
+- Closures are simply inner functions having access to the outer functions variables.
+```js
+function parent(){
+  var cookiesInTheJar = 50000;
+
+  function getCookieCount(){
+    console.log(cookiesInTheJar);
+  }
+
+  function childEatsCookies(){
+    cookiesInTheJar--;
+
+    getCookieCount();
+  }
+
+  return childEatsCookies;
+}
+
+var eatMoreCookies = parent();
+
+eatMoreCookies();
+```
+
+
+#### Functions in Objects
+ - Function Declarations vs Function Expressions
+ - Declarations are the 'normal' way:
+ ```
+ function someFunc(){
+	 //some code goes here
+ }
+ ```
 
 #### Hoisting
  ```js
