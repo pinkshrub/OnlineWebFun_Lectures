@@ -74,6 +74,8 @@
 
  brokenLoop(3);
  ```  
+#### Functions in Objects
+ - We just talked about the distinction between function declarations and function expressions. 
 
 #### Immediate Functions
  - Immediately Invoked Function Expression ("iffy")
@@ -89,5 +91,3 @@
  console.log(private);
 
  ```
-
-#### Functions in Objects
