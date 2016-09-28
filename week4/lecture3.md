@@ -42,14 +42,6 @@ eatMoreCookies();
 ```
 
 
-#### Functions in Objects
- - Function Declarations vs Function Expressions
- - Declarations are the 'normal' way:
- ```
- function someFunc(){
-	 //some code goes here
- }
- ```
 
 #### Hoisting
  ```js
