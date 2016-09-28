@@ -4,37 +4,6 @@
 
 #### Closures
 
-#### Functions in Objects
- - Function Declarations vs Function Expressions
- - Declarations are the "normal" way we're used to seeing functions defined:
- ```js
- function someFunc(){
-	 //code goes here
- }
-
- //invoked by:
- someFunc();
- ```
- - But functions can also be created via Expression
-  - by assigning a function to a variable
-  - or assigning a function as a property of an object
-
- ```js
-var thingy = function(){
-	console.log("this is part of a function expression")
-}
-//invoked by:
-thingy();
-
-var myObj = {
-	myFunction : function(){
-		console.log("this is my function which lives inside an object!")
-	}
-}
-//invoked by:
-myObj.myFunction(); //think about jQuery's dot methods!
- ```
-
 #### Hoisting
  ```js
  console.log(x);
@@ -79,7 +48,39 @@ myObj.myFunction(); //think about jQuery's dot methods!
 
 
  ```
- - \*only if they are created by declaration, **not** if they are created by function expression
+ \*only if they are created by declaration, **not** if they are created by function expression
+
+
+ #### Functions in Objects
+  - Function Declarations vs Function Expressions
+  - Declarations are the "normal" way we're used to seeing functions defined:
+  ```js
+  function someFunc(){
+ 	 //code goes here
+  }
+
+  //invoked by:
+  someFunc();
+  ```
+  - But functions can also be created via Expression
+   - by assigning a function to a variable
+   - or assigning a function as a property of an object
+
+  ```js
+ var thingy = function(){
+ 	console.log("this is part of a function expression")
+ }
+ //invoked by:
+ thingy();
+
+ var myObj = {
+ 	myFunction : function(){
+ 		console.log("this is my function which lives inside an object!")
+ 	}
+ }
+ //invoked by:
+ myObj.myFunction(); //think about jQuery's dot methods!
+  ```
 
 #### Callbacks
 
