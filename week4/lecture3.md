@@ -122,6 +122,22 @@ eatMoreCookies();
   ```
 
 #### Callbacks
+- You can pass functions as parameters into other functions
+- Then you can call it whenever you want to
+
+```js
+  function outer(first, last){
+    first();
+    console.log('B');
+    last();
+  }
+  function first(){
+    console.log('A');
+  }
+  function last(){
+    console.log('C');
+  }
+```
 
 #### Recursion
  - Sometimes, functions call other functions. Other times, functions call themselves!

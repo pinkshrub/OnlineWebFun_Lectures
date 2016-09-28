@@ -110,7 +110,7 @@ eatMoreCookies();
 eatMoreCookies();
 
 console.log(x);
-console.log(noSuchVariable);
+// console.log(noSuchVariable);
 
 
 /*ON HOISTING*/
@@ -120,6 +120,22 @@ console.log(noSuchVariable);
 
 var x = 20;
 
+/* ~~~~ ON CALLBACKS ~~~~ */
+function callbackHolder(callbackA, callbackB){
+  callbackA();
+  console.log('B');
+  callbackB();
+}
+function first(){
+  console.log('A');
+}
+function last(){
+  console.log('C');
+}
+
+callbackHolder(first, last);
+
+setTimeout(function(){ console.log('300ms has passed!'); }, 300);
 /*ON RECURSION*/
 
 function infiniteLoop(){ //poor computer!
