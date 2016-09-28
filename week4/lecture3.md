@@ -101,16 +101,17 @@ eatMoreCookies();
   //invoked by:
   someFunc();
   ```
-  - But functions can also be created via Expression
+  - Very similar to how we use 'var' to declare a variable, we use 'function' to _declare_ a function.
+  - But functions can also be created via Expression!
    - by assigning a function to a variable
    - or assigning a function as a property of an object
 
   ```js
- var thingy = function(){
+ var aFunction = function(){
  	console.log("this is part of a function expression")
  }
  //invoked by:
- thingy();
+ aFunction();
 
  var myObj = {
  	myFunction : function(){
@@ -149,7 +150,7 @@ eatMoreCookies();
 
 
 #### Immediate Functions
- - Immediately Invoked Function Expression ("iffy")
+ - Immediately Invoked Function Expression (IIFE, pronounced "iffy")
  - Offers the security and privacy of scoping without taking up a name
  - Putting the whole function inside (parens) makes it an expression the same way assigning it to a variable does
  - Invoking that function right away with the () means it doesn't wait to get called by anything else; it hits the gates running.
