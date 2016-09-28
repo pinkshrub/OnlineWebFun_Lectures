@@ -12,7 +12,7 @@
  ```
  - In "normal" languages (including Python), the program breaks if you try to call upon a variable that isn't yet set.
  - Oh no not so with Javascript!
- - JS 'hoists' all variable declarations to the very very top of the file.
+ - JS "hoists" all variable declarations to the very very top of the file.
  ```js
  var x; 	//implicitly and invisibly occurs
 
@@ -29,10 +29,10 @@
 	 console.log(bestFood);
 	 bestFood = "elephant ears";
 	 console.log(bestFood);
-	 return variable;
+	 return bestFood;
  }
  ```
-  - Functions are 'hoisted' as well!\*
+  - Functions are "hoisted" as well!\*
 
  ```js
  sayHi();

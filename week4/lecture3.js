@@ -1,7 +1,11 @@
+/*ON HOISTING*/
+
 // console.log(x);
 // console.log(noSuchVariable);
 
 var x = 20;
+
+/*ON RECURSION*/
 
 function infiniteLoop(){ //poor computer!
 	infiniteLoop(); // the function calls itself
@@ -22,5 +26,6 @@ function brokenLoop(num){ //how many times will this run?
 (function(){
   var private = "i am only accessible from within my function's scope"
   console.log(private);
+  return "blue"
 })() //immediately invoking itself
 // console.log(private);
