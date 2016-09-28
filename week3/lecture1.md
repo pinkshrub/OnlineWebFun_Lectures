@@ -1,3 +1,8 @@
+#jQuery -> AJAX
+
+##First, a step back: 
+
+ Objects
 
 ##We all know about javascript variables by this point:
 
@@ -8,14 +13,14 @@ But what if we want to store many properties of the same object?
 We have a couple options.
 
 
-	var person  = ["Michael", "brown", "Olalla"]
+	var person  = ["Michael", "brown", "blue", "Olalla"]
 
 
 So here we can access everything just fine so long as we know the index, or we can loop through every single element to find something.
 
-But how are other developers to know that hometown is at index [2] of this array?
+But how are other developers to know that hometown is at index [3] of this array?
 
-	console.log(person[2]);
+	console.log(person[3]);
 	-> "Olalla"
 
 ####enter the Object
@@ -24,6 +29,7 @@ But how are other developers to know that hometown is at index [2] of this array
 var person = {
 	"name": "Michael",
 	"hair_color": "brown",
+	"bicycle_color": "blue",
 	"hometown": "Olalla"
 }
 ```
@@ -35,7 +41,9 @@ But with orderly key / value pairs, any value can be looked up simply by knowing
 	console.log(person['hometown']);
 	-> "Olalla"
 
-This is just a warm-up. The real wizardry comes next!
+- Arrays of Objects!
+
+- This is just a warm-up. The real wizardry comes next!
 
 ##AJAX
 
@@ -70,7 +78,7 @@ This is just a warm-up. The real wizardry comes next!
 	- cross language / cross platform
 	- increase market size
 
-##Some APIs	worth checking out
+##Some APIs worth checking out
 
 Open Weather Map: http://openweathermap.org/api
 
@@ -80,13 +88,15 @@ Google Maps Directions API: https://developers.google.com/maps/documentation/dir
 
 Twitter API: https://dev.twitter.com/rest/public
 
-Flickr API: https://www.flickr.com/services/api/
+Flickr API: https://www.flickr.com/services/api
 
-NASA APIs: https://api.nasa.gov/
+NASA APIs: https://api.nasa.gov
+
+The Home of the US Government's data: https://data.gov
 
 Pokemon API: http://pokeapi.co/media/img/1.png
 
-Star Wars API: http://swapi.co/
+Star Wars API: http://swapi.co
 
 ## AJAX returns JSON and HTML as well as XML
  - wait, what's JSON?
@@ -96,23 +106,23 @@ Star Wars API: http://swapi.co/
 var data = {
 	results: [
 		{
-			name: 'Nic',
+			name: 'Rob',
 			hobby: 'Coding'
 		},
 		{
-			name: 'Dhurata',
+			name: 'Jennifer',
 			hobby: 'Coding'
 		},
 		{
-			name: 'Todd',
-			hobby: 'Teaching Others To Code'
+			name: 'Leo',
+			hobby: 'Coding'
 		},
 		{
 			name: 'Michael',
-			hobby: 'Teaching Others To Code'
+			hobby: 'Helping Others Code'
 		}
 	],
-	date: '08-16-2016',
+	date: '09-20-2016',
 	version: 0.9
 }
 ```

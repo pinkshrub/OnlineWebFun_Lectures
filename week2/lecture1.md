@@ -1,6 +1,12 @@
 #Web Fundamentals - Week 2
 ####Key Assignment
 - Wordstream (CSS) & Ninja to Cat (jQuery)
+- 
+
+####Git and GitHub
+- Git saves all your changes so you can revert to any save point!
+- GitHub saves that to the cloud
+- Let's do an algorithm and put it on Git! (not optional)
 
 ####The CSS Display Property Again
 - Inline vs Inline-Block vs Block

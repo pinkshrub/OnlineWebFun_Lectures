@@ -1,6 +1,6 @@
 #Web Fundamentals - Week 1
 ####Key Assignment
-- Plotting Your Blocks
+- FreeBSD
 
 ####Reminder: The 3 Languages Browsers Speak
 - HTML
@@ -8,7 +8,7 @@
 - Javascript
 
 ####Intro to CSS
-- Cascading Stylesheets
+- Cascading Style Sheets
 - If HTML is the content, CSS is the style and flair
 - CSS rules...
 ```
@@ -59,7 +59,7 @@ h1{
   </body>
 </html>
 ```
-- Best Practice? Linking a stylesheet in from somewhere else.  Try as best you can to avoid inline styling!
+- Best Practice? Linking a stylesheet in from somewhere else.  Avoid putting your styles inline in your HTML!
 
 ####HTML Attributes [class & id] and CSS Selections
 - Earlier we targeted ALL `<h1>` tags.
@@ -128,10 +128,12 @@ div {
 ####Chrome Developer Tools and The Box Model
 - When re-sizing any elements, such as a `<div>`, we need to know four things
 - Margin, Padding, Border, Content
-- Margin says 'push away'
-- Padding says 'give my contents some cushion!'
-- Border says 'apply more to the outside of my contents but don't squish the contents'
+
+- Margin says 'put blank space between me and my neighbors'
+- Padding says 'there needs to be more space between my contents and my borders!'
+- Border says 'i'm going to wrap around the outside of the padding'
+
 - Content size can be manipulated by the `width: ...px;` and `height: ...px;` rules
   - Check out Inspect Element in Google Chrome and see the box model in action!
 
-####LEMO - Let's Make a `<ul>` Horizontal!
+####LEMO - Let's Make a `<ul>` Horizontal / LEMO Plotting Your Blocks!
