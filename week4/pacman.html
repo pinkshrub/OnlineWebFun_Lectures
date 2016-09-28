@@ -19,12 +19,14 @@
 			[2,1,1,1,1,1,1,1,2,1,1,2],
 			[2,1,1,1,1,1,2,1,4,2,1,2],
 			[2,1,2,1,4,1,2,4,1,1,1,2],
-			[2,1,1,1,2,1,2,1,1,1,1,2],
+			[2,1,1,1,2,1,2,1,1,1,0,2],
 			[2,2,2,2,2,2,2,2,2,2,2,2]
 		];
 
+
 		var score = 0;
 		var gameActive = true;
+		var lives = 3;
 
 
 		var pacman = {
@@ -54,7 +56,7 @@
 		}
 
 		document.onkeydown = function(e){
-			console.log(e.keyCode)
+			// console.log(e.keyCode)
 			if(e.keyCode == 37) {
 				if (world[pacman.y][pacman.x-1] !== 2){
 					pacman.x --;
@@ -66,6 +68,7 @@
 					pacman.y --;
 				}
 				$("#pacman").css('transform', 'rotate(270deg)')
+				// moveGhost();
 			}
 			else if(e.keyCode == 39) {
 				if (world[pacman.y][pacman.x+1] !== 2){
@@ -83,9 +86,11 @@
 				world[pacman.y][pacman.x] = 0;
 				score += 100;
 			}
-			displayPacman();
-			displayWorld();
 			displayScore();
+			if (gameActive) {
+				displayPacman();
+				displayWorld();
+			}
 		}
 
 		function displayPacman(){
@@ -94,9 +99,67 @@
 		}
 
 		function displayScore(){
-			$('#score').text(score);
+			$('#scoreText').text(score);
+			$('#livesText').text(lives);
 		}
 
+		var ghost = {
+			x: 10,
+			y: 10
+		}
+
+		function displayGhost(){
+			document.getElementById('ghost').style.top = ghost.y*26+10+"px";
+			document.getElementById('ghost').style.left = ghost.x*26+10+"px";
+		}
+
+		function moveGhost(){
+			var random = Math.floor(Math.random() * 4) + 37;
+			// var random = 40
+			console.log(random)
+			console.log(world[ghost.y][ghost.x])
+			switch (random) {
+				case 37:
+				console.log('in 37')
+					if (world[ghost.y][ghost.x-1] != 2){
+						ghost.x --;
+					}
+					break;
+				case 38:
+				console.log('in 38')
+					if (world[ghost.y-1][ghost.x] != 2){
+						ghost.y --;
+					}
+					break;
+				case 39:
+				console.log('in 39')
+					if (world[ghost.y][ghost.x+1] != 2){
+						ghost.x ++;
+					}
+					break;
+				case 40:
+				console.log('in 40')
+					if (world[ghost.y+1][ghost.x] != 2){
+						ghost.y ++;
+					}
+					break;
+				default:
+					console.log('whoa we are breaking here')
+			}
+			if (ghost.y === pacman.y && ghost.x === pacman.x) {
+				lives -= 1;
+			}
+			if (lives === 0){
+				gameActive = false;
+			}
+			displayScore();
+			if (gameActive){
+				displayGhost();
+				displayWorld();
+			}
+		}
+		setInterval(moveGhost, 500);
+		console.log('hello')
 		//check game over
 		//implement game over
 		//implement ghost
@@ -106,13 +169,20 @@
 		displayWorld();
 		displayPacman();
 		displayScore();
+		displayGhost();
+		moveGhost();
 
 	}); //end of document.ready
 		</script>
 	</head>
 	<body>
 		<div id="pacman"></div>
+		<div id="ghost"></div>
 		<div id="gameboard"></div>
-		<div id="score"></div>
+		<div id="scoreBox">
+			<p>score: <span id="scoreText"></span></p>
+			<p>lives: <span id="livesText"></span></p>
+		</div>
+
 	</body>
 </html>
