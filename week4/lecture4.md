@@ -1,11 +1,12 @@
 #### Moving on to Python
 
  - What should I know before starting?
+
  - How can I install it?
+
  - When will we get platform access?
 
  - Questions?
-
 
 
 
@@ -164,7 +165,7 @@ Here we see that there is already a PATH variable declared with some other file 
 
 Finally, assuming you installed Python on your C drive, you will have to add this line to your Variable Value.
 
-C:\Python27;C:\Python27\Scripts;C:\Python27\Lib
+`C:\Python27;C:\Python27\Scripts;C:\Python27\Lib`
 ￼
 
 We can check the version and then run python in our terminal to see if it is working:
