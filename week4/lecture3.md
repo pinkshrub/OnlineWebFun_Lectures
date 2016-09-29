@@ -18,7 +18,7 @@
 
 #### Closures
 
-- Closures are simply inner functions having access to the outer functions variables.
+- Closures are simply inner functions having access to the outer function's variables.
 ```js
 function parent(){
   var cookiesInTheJar = 50000;
@@ -129,14 +129,14 @@ eatMoreCookies();
 ```js
   function outer(first, last){
     first();
-    console.log('B');
+    console.log('then');
     last();
   }
-  function first(){
+  function callbackA(){
     console.log('A');
   }
-  function last(){
-    console.log('C');
+  function callbackB(){
+    console.log('B');
   }
 ```
 
