@@ -150,13 +150,13 @@ To install python, we will download Python directly from Python's website: 
 We will have to set a PATH environment variable. To do this we navigate to our Advanced System Settings of your computer. Go to Control Panel->Advanced System Settings-> Advanced-> Environment Variables:
 
 
-[image**](windows1.PNG)
+[image**](/windows1.png)
 
 ￼
 At this point, we can click Environment Variables to set up the Python executable for our Command Prompt.
 
 ￼
-[image**](windows2.PNG)
+[image**](/windows2.png)
 
 
 Here we see that there is already a PATH variable declared with some other file path directories already set up.
