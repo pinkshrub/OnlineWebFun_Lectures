@@ -1,15 +1,24 @@
 #Web Fundamentals - Week 1
+
 ####Key Assignment
-- FreeBSD
+- Free BSD done by Thursday (this will be code reviewed via upload from platform)
+- PPC by Friday
 
 ####Administrative Bits
+- Link to powerpoint [https://docs.google.com/presentation/d/19PNX2gYcL4J8jVeogSQXTeNzDwwOGYLq35xTscknEOo/edit?usp=sharing]
+  - About us
+  - First 1:1
+  - Overview
+  - Future Meetings
+  - Expectations & Culture
+    - Attitude & Dedication
+    - Expected Hours
+  - 20 min rule
+  - Our platform
+  - Communication (slack)
 - Anyone still not invited to the Coding Dojo Online Slack team?
 - Anyone still not able to access the Learning Platform? [http://learn.codingdojo.com]
 - Anyone still not in the Slack web-fundamentals channel?
-
-####HTTP Request/Response Cycle
-- Apple store
-- Straightforward walkthrough
 
 ####Where Does The Web Start?
 - It's all just a bunch of connected computers
@@ -33,64 +42,3 @@
 - Most-used tags are on the learning platform.  
   - We teach the <b>20%</b> that builds the <b>80%</b> of sites
   - What's nytimes.com made up of? Nothing crazy!
-
-####Indentation - Which Would You Rather Read?  Which One Works?
-```
-    <html>
-  <head>
-                                          <title>Indented HTML</title>
-</head>
-                            <body>
-        <div>
-      <h1>Hello World</h1>
-          </div>
-        </body>
-      </html>
-```
-#####VS.
-```
-<html>
-  <head>
-    <title>Indented HTML</title>
-  </head>
-  <body>
-    <div>
-      <h1>Hello World</h1>
-    </div>
-  </body>
-</html>
-```
-
-####Parent-Child Quiz
-```
-<html>
-  <head></head>
-  <body>
-    <div>
-      <h1>Quiz!</h1>
-      <p>I am a paragraph</p>
-    </div>
-  </body>
-</html>
-```
-1. What is the parent of `<h1>`?
-2. What is the parent of `<p>`?
-3. What is the immediate child of the `<body>`?
-4. What is the sibling of `<h1>`?
-
-####HTML5
-- New tags plus more tags that do more than just spit out text.
-  - `<audio>`
-  - `<header>`
-  - `<footer>`
-
-
-####For Tomorrow
->>>>>>> 8cec3904f69338977d16de2dab914498e6a08f01
-1. Create a GitHub Account
-2. Download Git (skip ahead to Git section of platform)
-3. Create a Repo
-4. Push an Assignment
-5. Send a Slack message to the web-fundamentals channel with a link to your new repo
-
-####Lemo - Create A Git Repo and Push Algorithm Solutions
