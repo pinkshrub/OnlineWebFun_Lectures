@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .box-line-height {
+        background-color: blue;
+        width: 500px;
+        height: 500px;
+        line-height: 500px;
+        text-align: center;
+      }
+      .box-table-cell {
+        background-color: yellow;
+        width: 500px;
+        height: 500px;
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .box-translate {
+        background-color: green;
+        width: 500px;
+        height: 500px;
+        position: relative;
+      }
+      .box-translate h1 {
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box-line-height">
+      <h1>The line height is the size of the div!</h1>
+    </div>
+    <div class="box-table-cell">
+      <h1>The box now acts like a table-cell!</h1>
+    </div>
+    <div class="box-translate">
+      <h1>The box has been translated!</h1>
+    </div>
+  </body>
+</html>
