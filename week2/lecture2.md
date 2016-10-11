@@ -1,14 +1,91 @@
 #Web Fundamentals - Week 2
 
 ####Javascript fundamentals
+- Variables
+  ```js
+    var stuff = 'hello';
+  ```
+- Functions
+  ```js
+  var fn = function(){
+    console.log('hey');
+  }
+  function fn(){
+    console.log('hey');
+  }
+
+  //execute function
+  fn();
+  ```
+- Booleans
+  ```js
+    var bool = true;
+  ```
 - Strings
+  ```js
+    var stuff = 'hello';
+  ```
 - Numbers
+  ```js
+    var num = 5;
+    var anotherNum = 6.12;
+  ```
 - Arrays
-- Objects
-- if
-- for
-- while
-- function
+  (buckets)
+  ```js
+    var arr = [1, 'sara', 2.12];
+  ```
+- Objects (labeled buckets, dictionary)
+  ```js
+    var obj = {};
+
+    var objWithStuff = {
+      hammers : ["It's", "Hammer", "Time"];
+    };
+
+    console.log(objWithStuff)
+    console.log(objWithStuff.hammers);
+    console.log(objWithStuff.hammers[0]);
+  ```
+  - Functions in objects
+
+  ```js
+    var fnInObj = {
+      fn : function(){
+        console.log('heyo');
+      }
+    };
+
+    //execute function in object
+    fnInObj.fn();
+  ```
+- If/Else
+  ```js
+    var bool = true;
+
+    if(bool) {
+      console.log('in if');
+    } else {
+      console.log('in else');
+    }
+  ```
+- Loops
+  - for
+  ```js
+    var arr = [1,2,3];
+    for (var i = 0; i < arr.length; i++) {
+      console.log(arr[i]);
+    }
+  ```
+  - while
+
+    ```js
+    var num = 5;
+    while(num > 0) {
+      console.log(num);
+      num = num-1;
+    }
+    ```
 
 ####Javascript
 - HTML is the content
@@ -25,6 +102,9 @@
 - jQuery is just a library of day-to-day Javascript commands that you can use to manipulate the DOM
 - The DOM?
   - The Document Object Model
+  - What does that mean? Everything is an object. At the highest level is an object, called document. All the tags inside are converted into objects, and placed hierarchically into the document object.
+  - The document object also comes with utility functions. One of which is grabbing an element by it's id.
+
 ```
 console.dir(document);
 ```
