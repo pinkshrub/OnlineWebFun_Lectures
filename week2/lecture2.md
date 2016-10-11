@@ -2,11 +2,11 @@
 
 ####Javascript fundamentals
 - Variables
-  ```js
+  ```javascript
     var stuff = 'hello';
   ```
 - Functions
-  ```js
+  ```javascript
   var fn = function(){
     console.log('hey');
   }
@@ -18,25 +18,25 @@
   fn();
   ```
 - Booleans
-  ```js
+  ```javascript
     var bool = true;
   ```
 - Strings
-  ```js
+  ```javascript
     var stuff = 'hello';
   ```
 - Numbers
-  ```js
+  ```javascript
     var num = 5;
     var anotherNum = 6.12;
   ```
 - Arrays
   (buckets)
-  ```js
+  ```javascript
     var arr = [1, 'sara', 2.12];
   ```
 - Objects (labeled buckets, dictionary)
-  ```js
+  ```javascript
     var obj = {};
 
     var objWithStuff = {
@@ -49,7 +49,7 @@
   ```
   - Functions in objects
 
-  ```js
+  ```javascript
     var fnInObj = {
       fn : function(){
         console.log('heyo');
@@ -60,7 +60,7 @@
     fnInObj.fn();
   ```
 - If/Else
-  ```js
+  ```javascript
     var bool = true;
 
     if(bool) {
@@ -71,7 +71,7 @@
   ```
 - Loops
   - for
-  ```js
+  ```javascript
     var arr = [1,2,3];
     for (var i = 0; i < arr.length; i++) {
       console.log(arr[i]);
@@ -79,7 +79,7 @@
   ```
   - while
 
-    ```js
+    ```javascript
     var num = 5;
     while(num > 0) {
       console.log(num);
