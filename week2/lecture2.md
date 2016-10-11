@@ -1,4 +1,15 @@
 #Web Fundamentals - Week 2
+
+####Javascript fundamentals
+- Strings
+- Numbers
+- Arrays
+- Objects
+- if
+- for
+- while
+- function
+
 ####Javascript
 - HTML is the content
 - CSS is the style
