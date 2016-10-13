@@ -10,17 +10,23 @@
   </body>
   <script>
     var $ = function(id) {
-        var element = document.getElementById(id); //ours only works for ids, not classes or tags
-        console.log(element);
-        var objectWithFunctions = {
-            html : function(text) {
-                element.innerHTML = text;
-            }
-        }
-
-        return objectWithFunctions;
+      var element = document.getElementById(id); //ours only works for ids, not classes or tags
+      console.log(element);
+      var objectWithFunctions = {
+          html : function(text) {
+              element.innerHTML = text;
+          },
+          click : function(cb) {
+            element.onclick = cb;
+          }
       }
 
-      $('header').html('This should work!!');
+      return objectWithFunctions;
+    }
+
+    $('header').html('This should work!!');
+    $('header').click(function(){
+      console.log('hi');
+    });
   </script>
 </html>
