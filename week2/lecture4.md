@@ -202,17 +202,17 @@ How about instead of returning some string, let's have it return an object with 
 Now let's see what gets returned from calling the function
 
 ```js
-	var objectWithFunctions = $('#blue-button');
-	console.log(objectWithFunctions);
+	var objectReturned = $('#blue-button');
+	console.log(objectReturned);
 ```
 
-We have the objectWithFunctions that we returned from the $ function.
+We have the objectReturned that we returned from the $ function.
 
 Ok so let's finalize all this. How do we call the html function?
 
 ```js
-	var objectWithFunctions = $('#blue-button');
-	objectWithFunctions.html();
+	var objectReturned = $('#blue-button');
+	objectReturned.html();
 ```
 
 This is the same as this, which looks very familiar:
@@ -258,7 +258,7 @@ Now going back to the browser javascript we had before, let's have the html insi
 
 ```js
 var $ = function(id) {
-  var element = document.getElementById(id);
+  var element = document.getElementById(id); //ours only works for ids, not classes or tags
 
 	var objectWithFunctions = {
 		html : function(text) {
@@ -277,12 +277,12 @@ var $ = function(id) {
   var element = document.getElementById(id);
 
   var objectWithFunctions = {
-		html : function(text) {
+	  html : function(text) {
 			element.innerHtml = text;
 		},
-    click : function(cb) {
-      element.onclick = cb;
-    }
+      click : function(cb) {
+      	element.onclick = cb;
+		}
 	}
 
 	return objectWithFunctions;
