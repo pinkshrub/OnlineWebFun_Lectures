@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1 id="i-am-h1">Hey there!</h1>
+    <button id="blue-button">I am blue button</button>
+    <script>
+      var $ = function(id){
+        var element = document.getElementById(id);
+        console.log(element);
+
+        var obj = {
+          html : function(text){
+            element.innerHTML = text;
+          }
+        }
+
+        return obj;
+      }
+      $('i-am-h1').html('Cats!');
+
+    </script>
+  </body>
+</html>
