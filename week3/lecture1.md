@@ -29,7 +29,7 @@ $(document).ready(function(){
 <html>
 	<body>
 		<h1>First Header</h1>
-    		<h2>Second Header</h2>
+    	<h2>Second Header</h2>
   	</body>
 </html>
 ```
