@@ -27,33 +27,44 @@ $(document).ready(function(){
 - At this point let's assume we have the following HTML snippet
 ```
 <html>
-  <body>
-    <h1>First Header</h1>
-  </body>
+	<body>
+		<h1>First Header</h1>
+    	<h2>Second Header</h2>
+		<ul>
+			<li>one</li>
+			<li>two</li>
+			<li>three</li>
+		</ul>
+  	</body>
 </html>
 ```
 - We can add some content to this document using `.append()`
 ```
 $('body').append('<h2>I am another header!</h2>');
 ```
-- Let's set up a click event listener on every `<h2>`
+- Let's set up a click event listener for every `<h2>` in order to do the appending. We're going to wrap this new event listener inside of a `$(document).ready()` function and pass through our code as an anonymous function like we discussed. 
 ```
-<script>
-$('h2').click(function(){
-    console.log('h2 clicked');
-})
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('h2').click(function(){
+			$('body').append('<h2>I am another header!</h2>');
+		})
+	})
 </script>
 ```
-- <b>QUIZ</b> Will 'h2 clicked' get logged to the console?
-  - Why or Why Not?
+- <b>QUIZ</b>
+	-Will 'I am another header!' get added to the code?
+		-Why or Why Not?
 
-####Accounting for Dynamic Content (using `.on('event','on_what', function(){...}`))
+####Accounting for Dynamic Content (using `.on('event','event_trigger', function(){...}`))
 - Fixing our previous example...
 ```
-<script>
-$('body').on('click', 'h2', function(){
-    console.log('h2 clicked');
-});
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('body').on('click', 'h2', function(){
+    		$('body').append('<h2>I am another header!</h2>');
+		})
+	});
 </script>
 ```
 - Now we're set up for any `<h2>` tags that show up at ANY POINT in the document's lifetime
@@ -61,10 +72,12 @@ $('body').on('click', 'h2', function(){
 ####$(this) => Which One?
 - `$(this)` will always answer the question of Which One?
 ```
-<script>
-$('li').click(function(){
-  console.log($(this));
-})
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('li').click(function(){
+			console.log($(this));
+		})
+	})
 </script>
 ```
 

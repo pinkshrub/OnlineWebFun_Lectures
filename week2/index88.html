@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+  </head>
+  <body>
+    <h1 id="header">hi!</h1>
+  </body>
+  <script>
+    var $ = function(id) {
+      var element = document.getElementById(id); //ours only works for ids, not classes or tags
+      console.log(element);
+      var objectWithFunctions = {
+          html : function(text) {
+              element.innerHTML = text;
+          },
+          click : function(cb) {
+            element.onclick = cb;
+          }
+      }
+
+      return objectWithFunctions;
+    }
+
+    $('header').html('This should work!!');
+    $('header').click(function(){
+      console.log('hi');
+    });
+  </script>
+</html>

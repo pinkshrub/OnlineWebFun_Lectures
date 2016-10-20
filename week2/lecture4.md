@@ -262,7 +262,7 @@ var $ = function(id) {
 
 	var objectWithFunctions = {
 		html : function(text) {
-			element.innerHtml = text;
+			element.innerHTML = text;
 		}
 	}
 
@@ -278,7 +278,7 @@ var $ = function(id) {
 
   var objectWithFunctions = {
 	  html : function(text) {
-			element.innerHtml = text;
+			element.innerHTML = text;
 		},
       click : function(cb) {
       	element.onclick = cb;
