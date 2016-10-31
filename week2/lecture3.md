@@ -1,88 +1,57 @@
-#Web Fundamentals - Week 2
-####Key Assignment
-- Ninja to Cat
+# jQuery day 1 #
 
-####More jQuery
-- Events
-- Callbacks
-- Dynamic Content
-- $(this)
+## javascript in your browser ##
 
-####Events in jQuery
-- Remember Javascript is providing the magic under the hood.
-  - It includes events such as onmousedown, onkeypress, onkeydown, onmouseover, etc.
-- What are events?
-  - We want to be able to capture and listen for things like 'clicks', 'presses', 'typing', 'hovering', etc.
-  - If we witness an event, we can fire off other bits of code
-    - We state those other bits of code to fire off inside of what we call a callback
+What is the DOM? The DOM stands for document object model. what Does that mean? Everything is an object. At the highest level is an object, called document. All the tags inside are converted into objects, and placed hierarchically into the document object.
 
-####Callbacks
-```
-$(document).ready(function(){
-   // the .ready() is an event listener itself! and this comment is inside a callback
-   console.log('hello');
-})
-```
-- Typically callbacks are anonymous functions that get fired off based on something else calling it.  In other words, a callback is just a function that is executed by another function.
-- In the case above, `.ready()` is a function and we passed into it another function!
+The document object also comes with utility functions. One of which is grabbing an element by it's id.
 
-####Dynamic Content
-- At this point let's assume we have the following HTML snippet
-```
-<html>
-  <body>
-    <h1>First Header</h1>
-  </body>
-</html>
-```
-- We can add some content to this document using `.append()`
-```
-$('body').append('<h2>I am another header!</h2>');
-```
-- Let's set up a click event listener on every `<h2>`
-```
-<script>
-$('h2').click(function(){
-    console.log('h2 clicked');
-})
-</script>
-```
-- <b>QUIZ</b> Will 'h2 clicked' get logged to the console?
-  - Why or Why Not?
-
-####Accounting for Dynamic Content (using `.on('event','on_what', function(){...}`))
-- Fixing our previous example...
-```
-<script>
-$('body').on('click', 'h2', function(){
-    console.log('h2 clicked');
-});
-</script>
-```
-- Now we're set up for any `<h2>` tags that show up at ANY POINT in the document's lifetime
-
-####$(this) => Which One?
-- `$(this)` will always answer the question of Which One?
-```
-<script>
-$('li').click(function(){
-  console.log($(this));
-})
-</script>
+```html
+<div id="blue-box">
+	<p>Text inside</p>
+</div>
 ```
 
-####A Word On Debugging
-- Always `console.log()` to make sure jQuery is loaded
+```js
+var element = document.getElementById("blue-box");
+
+console.log(element);
 ```
-$(document).ready(function(){
-    console.log('jquery is available!');
-})
+
+This is using the browser's built in javascript methods attached to the document object.
+
+What will the resulting element hold? Well, we know that each of these elements in an html page are objects. So it's not surprising that it gives us back an element as an object!
+
+```js
+console.log(element);
+
+element.innerHtml = "<h1>Different text inside</h1>"
 ```
-- `console.log()` inside your callbacks!
+
+If we look at the element, there are a bunch of more properties to work with. One property we see here is innerHtml. Look how it shows the content inside the div?
+
+I'm going to change that. Let's have it say different text, with an h1 tag.
+
+I successfully changed the DOM using plain javascript. The div node was updated, so the view updated.
+
+# What is jQuery? #
+
+jQuery is a javascript library. jQuery uses your built in methods offered from the browser. Like the one I showed you above. And it wraps it in a syntax that gives it an intuitive way to use it.
+
+These browser methods helps you interact with the elements, or the objects, of your web page.
+
+Here's an example of how it's used.
+
+```html
+<div id='blue-box'>Text Inside</div>
 ```
-$('li').click(function(){
-  console.log('li clicked');
-  console.log($(this));
-});
+
+```js
+var result = $('#blue-box').html();
+
+console.log(result);
 ```
-- `console.log()`, `console.log()`, `console.log()`!!!
+
+That all seems kind of like magic doesn't it. html() function takes an element, and grabs everything in it.
+
+We're going to see this pattern quite often in jQuery. I think to be able to use it, it really helps to understand how it's constructed which we will go over tomorrow.

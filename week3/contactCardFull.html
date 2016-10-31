@@ -17,7 +17,7 @@
 		<script type="text/javascript">
 		$('document').ready(function() {
 
-			$('.user_form').submit(function() {
+			$('.user_form').submit(function(e) {
 				console.log($('#desc').val());
 				var htmlString = "<div class='person'>";
 				htmlString += "<h2>"+ $('#fname').val()+ " " + $('#lname').val() +"</h2>";
@@ -25,7 +25,8 @@
 				htmlString += "<h4>Click for description!</h4>";
 				htmlString += "</div>";
 				$('#contacts').append(htmlString);
-				return false;
+				$('.user_form').children().val("");
+				e.preventDefault();
 			}); //user_form.submit
 
 			//build click handler

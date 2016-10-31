@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .box {
+        width: 300px;
+        height: 300px;
+      }
+      .box:first-child {
+        border: 5px solid black;
+      }
+      .box:last-child {
+        border: 6px dotted red;
+      }
+
+      .box.static {
+        /*top: 50px;*/
+        /*left: 50px;*/
+        background-color: green;
+        /*position: static;*/
+      }
+      .box:first-child:hover {
+        border: 5px solid pink;
+      }
+      .box.static #hello {
+        background-color: magenta;
+      }
+      /*.box:hover {
+        border: 8px solid orange;
+      }*/
+      .box.relative {
+        /*top: 50px;*/
+        /*left: 50px;*/
+        background-color: red;
+        /*position: relative;*/
+      }
+      .box.absolute {
+        /*top: 0;*/
+        /*left: 0;*/
+        background-color: blue;
+        /*position: absolute;*/
+      }
+      .box.fixed {
+        /*top: 0;*/
+        /*left: 0;*/
+        background-color: yellow;
+        /*position: fixed;*/
+      }
+      .wrapper {
+        margin: 30px;
+        background-color: silver;
+        position: relative;
+      }
+      .outer {
+        background-color: maroon;
+        position: relative;
+      }
+        .inner {
+          background-color: aqua;
+          position: absolute;
+          height: 200px;
+          width: 200px;
+          z-index: 60;
+        }
+        .small {
+          background-color: gold;
+          position: absolute;
+          height: 100px;
+          width: 100px;
+          z-index: 50;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box static">
+        <h1 id="hello">Yolo</h1>
+      </div>
+      <div class="box relative"></div>
+      <div class="box absolute"></div>
+      <div class="box fixed"></div>
+      <div class="box outer">
+        <div class="small"></div>
+        <div class="inner"></div>
+      </div>
+    </div>
+  </body>
+</html>

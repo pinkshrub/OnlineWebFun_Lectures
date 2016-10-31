@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .wrapper {
+        position: relative;
+        padding: 200px;
+        background-color: silver;
+      }
+        .box {
+          width: 300px;
+          height: 300px;
+          font-size: 40px;
+        }
+        .box.static{
+          background-color: blue;
+        }
+        .box.fixed{
+          /*top: 0;*/
+          /*left: 0;*/
+          /*position: fixed;*/
+          background-color: yellow;
+        }
+        .box.relative{
+          /*left: 20px;
+          top: 20px;
+          position: relative;*/
+          background-color: pink;
+        }
+        .box.absolute{
+          /*top: 0px;*/
+          /*left: 0px;*/
+          /*position: absolute;*/
+          background-color: maroon;
+        }
+        /*.mini-box.relative {
+          left: 0px;
+          top: 0px;
+          z-index: 0;
+          position: relative;
+          background-color: white;
+          width: 200px;
+          height: 200px;
+        }*/
+        /*.mini-box.ontop {
+          left: 0px;
+          top: 0px;
+          z-index: 1;
+          position: absolute;
+          background-color: green;
+          width: 100px;
+          height: 100px;
+        }*/
+        /*.box.outer {
+          background-color: green;
+          position: absolute;
+        }*/
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box static">Static</div>
+      <div class="box fixed">Fixed</div>
+      <div class="box relative">Relative</div>
+      <div class="box absolute">Absolute</div>
+      <!-- <div class="box outer">
+        <div class="mini-box relative">Stuff inside</div>
+        <div class="mini-box ontop">small</div>
+      </div> -->
+    </div>
+  </body>
+</html>

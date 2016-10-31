@@ -2,16 +2,34 @@
 ####Key Assignment
 - FreeBSD
 
-####Reminder: The 3 Languages Browsers Speak
+####Where Does The Web Start?
+- It's all just a bunch of connected computers
+- All we are doing is sending out requests to different addresses (where computers live)
+  - Those computers are executing logic based on our requests to deliver pages/data back to us
+
+####Languages Browsers Speak
 - HTML
 - CSS
 - Javascript
+
+####HTML
+- HyperText Markup Language
+  - Just a type of language contained in a document that a browser can read
+  - Determines the structure of the page
+- Tags get interpreted as content
+  - `<!DOCTYPE html>` declares that this is an html5 document. Use this always.
+  - `<html>` starts a document and the corresponding `</html>` ends it
+  - `<head>` contains information about the page
+  - `<body>` contains the content displayed
+- Most-used tags are on the learning platform.  
+  - We teach the <b>20%</b> that builds the <b>80%</b> of sites
+  - What's nytimes.com made up of? Nothing crazy!
 
 ####Intro to CSS
 - Cascading Style Sheets
 - If HTML is the content, CSS is the style and flair
 - CSS rules...
-```
+```css
 h1{
   color: red;
   background-color: gray;
@@ -21,7 +39,7 @@ h1{
 - This example targets ALL `<h1>` tags in our document and applies those rules
 - Where could stylesheets and/or styling live?
   1. In the head of the document within a `<link...>` tag.  This points us to find a file somewhere else!
-```
+```html
 <html>
   <head>
     <title>Styling</title>
@@ -33,7 +51,7 @@ h1{
 </html>
 ```
   2. In the head again, but rules are defined within `<style>` tags
-```
+```html
 <html>
   <head>
     <title>Styling</title>
@@ -49,7 +67,7 @@ h1{
 </html>
 ```
   3. You can also style 'inline', e.g.
-```
+```html
 <html>
   <head>
     <title>Styling</title>
@@ -66,13 +84,13 @@ h1{
   - This doesn't always make things easy.
   - What if we don't want to style ALL `<h1>` tags but only a handful?  How do we distinguish them?
 - We can add attributes to our HTML tags like class or id to help us target tags
-```
+```html
 <h1 class="cool">Hello Dojo Students</h1>
 <h1>Hi There</h1>
 <p class="cool">Welcome</p>
 ```
 - Now we can target <b>any</b> tags with the class of `cool`
-```
+```css
 .cool{
   color: blue;
 }
@@ -90,7 +108,7 @@ h1{
 
 ####QUIZ
 - What's the weight of these rules?
-```
+```css
 h1 {...}
 #bigTime {...}
 div h1 {...}
@@ -98,14 +116,14 @@ div h1 {...}
 ```
 
 ####Cascading???
-```
+```html
 <div class="wrapper">
   <h1>You Are Awesome</h1>
   <p>Green Means Go</h1>
 </div>
 ```
 - With the snippet above, any rules the `<div>` has, will be applied to any of its children, `<h1>` and `<p>`
-```
+```css
 div {
   color: blue;
 }
