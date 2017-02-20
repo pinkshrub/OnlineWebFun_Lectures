@@ -1,11 +1,11 @@
 
-####More jQuery
+#### More jQuery
 - Events
 - Callbacks
 - Dynamic Content
 - $(this)
 
-####Events in jQuery
+#### Events in jQuery
 - Remember Javascript is providing the magic under the hood.
   - It includes events such as onmousedown, onkeypress, onkeydown, onmouseover, etc.
 - What are events?
@@ -13,7 +13,7 @@
   - If we witness an event, we can fire off other bits of code
     - We state those other bits of code to fire off inside of what we call a callback
 
-####Callbacks
+#### Callbacks
 ```
 $(document).ready(function(){
    // the .ready() is an event listener itself! and this comment is inside a callback
@@ -42,7 +42,7 @@ $(document).ready(function(){
 ```
 $('body').append('<h2>I am another header!</h2>');
 ```
-- Let's set up a click event listener for every `<h2>` in order to do the appending. We're going to wrap this new event listener inside of a `$(document).ready()` function and pass through our code as an anonymous function like we discussed. 
+- Let's set up a click event listener for every `<h2>` in order to do the appending. We're going to wrap this new event listener inside of a `$(document).ready()` function and pass through our code as an anonymous function like we discussed.
 ```
 <script type="text/javascript">
 	$(document).ready(function(){
