@@ -6,7 +6,7 @@
 
 | Session    | Monday  | Tuesday | Wednesday | Thursday | Friday |
 |--------    |---------|---------|-----------|--------  |  ----- |
-|Algorithms  | Ch.2    |  Ch. 2  |    CH2    |  CH2     |  none  |
+|Algorithms  | Modulo  |Math| Scope |Desert Isl.|  none  |
 |Code Review | None    |Ninja2Cat| Pokemon   |ContactCard|circles |
 |Lectures    | JQ      | JQ, JS  | AJAX, API |JQAPIAAJAX|    none|
 

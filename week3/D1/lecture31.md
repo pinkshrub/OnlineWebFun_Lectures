@@ -1,11 +1,32 @@
-outline
+### Outline
 
 1. Admin
-- happy yellowbelts!
-- yellowbelt stuff...
+	- happy yellowbelts!
+	- yellowbelt stuff...
+
 2. Context
-- last week we learned javascript can interact with browser
-- So, lets do some JS and see if we can make something that lets do some stuff?!
+	- last week we learned javascript can interact with browser
+	- This week we gonna keep JS-ing and interact with other webpages!
+	- So, lets do some JS and see if we can make something that lets do some stuff?!
+
+	- Recap of Friday!
+		- getElementById <= getter
+		- innerHTML <= getter & setter
+
+	- remember function does stuff and then returns a thing
+		- can be anything
+
+	- Things that might be useful...
+		- traversal
+		- manipulation
+		- event handling
+
+	-JQuery CDN to demo basic JQ functionality!
+
+	- Remember the order that things get ran
+		- header>body
+			- demo this (and the reason we need .ready)
+				- build a thingy that does DOM stuff in head
 
 3. Build our own version of JQuery!
 # Let's build jQuery #

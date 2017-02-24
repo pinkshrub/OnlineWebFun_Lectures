@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Git Contact Card Test</title>
+    <script type="text/javascript" src="./../../../Admin/Assets/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // when contact card making form is submitted
+        $('form').submit(function(e) {
+          e.preventDefault();
+          // get requisite information
+          var name = $('#thename').val();
+          console.log(name);
+          // var name = 'pinkshrub';
+
+          // make call. To use an authorized version, append '?access_token=<YOURTOKENHERE>'
+          var url = 'https://api.github.com/users/';
+          console.log(url + name);
+          $.get(url + name, function(results){
+              console.log(results);
+              var user = {};
+              user.name = name;
+              user.bio = results.bio;
+              user.email = results.email;
+
+              $('#cardbox').append("<div><p>" +  user.name + "</p><p>" +   user.bio + "</p><p>" + user.email + "</p></div>");}, 'json');
+
+          // static information for testing
+          // var username = 'Rob Boss';
+          // var bio = 'I am make paint video entertainment';
+          // var email = 'bob@ross.com';
+
+          // append a contact card!
+
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <form>
+        <input id="thename" type="text" value="">
+        <input type="submit" value="Create a Contact Card">
+      </form>
+      <div id="cardbox">
+      </div>
+    </div>
+  </body>
+</html>
